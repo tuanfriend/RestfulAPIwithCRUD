@@ -37,7 +37,7 @@ module.exports = {
             if(err){
                 res.json({message: "Could not save new task", errors:err})
             } else{
-                res.json({message: 'succes!!!!!s', data: task})
+                res.json({message: 'success!!!!!', data: task})
                 // res.redirect('/')
             }
         });

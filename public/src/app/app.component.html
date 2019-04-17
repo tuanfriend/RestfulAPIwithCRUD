@@ -1,0 +1,70 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Resful Tasks API!
+  </h1>
+</div>
+<!-- <button (click)="tasksOnClick()">Click to get all tasks</button>
+<br>
+<div *ngFor="let x of task">
+  {{x.title}}
+  <button (click)="fullOnClick(x)">Full Detail</button>
+</div>
+<h3 *ngIf="description!">Description: {{this.description}}</h3> -->
+
+<hr>
+
+<form (submit)="onSubmit()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    <p> {{ newTask | json }} </p>
+    <b>Add new Task</b><br>
+    <input type="text" name="newTask.title" [(ngModel)]="newTask.title" /><br><br>
+    <input type="text" name="newTask.description" [(ngModel)]="newTask.description" /><br><br>
+    <input type="submit" value="Create Task" />
+</form>
+<hr>
+
+
+<br><br>
+<button (click)="tasksOnClick()">Click to get all tasks</button>
+<br><br>
+<div *ngFor="let x of task">
+  
+  <b>Title: </b>{{x.title}} <br>
+  <b>Description: </b>{{x.description}}<br>
+  <button (click)="editform(x)">Edit</button>
+
+  <form (submit) = "onDelete(x._id)">
+      <input type="submit" value="Delete Task" />
+  </form>
+
+  <br><br>
+  <div *ngIf="x.showEditForm">
+      <form (submit)="onEdit(x)">
+          <!-- use the json pipe to see how newTask changes in real time -->
+          <b>Edit Task</b><br>
+          <input type="text" name="editTask.title" [(ngModel)]="x.title" /><br><br>
+          <input type="text" name="editTask.description" [(ngModel)]="x.description"/><br><br>
+          <input type="submit" value="Update Task" />
+      </form>
+      </div>
+
+</div>
+
+
+<!-- <h3>Value of num is: {{num}}</h3>
+<h3>Value of randNum is: {{randNum}}</h3>
+<h3>{{str}}</h3>
+<input type="text" [value]="first_name" />
+<hr>
+
+<p *ngIf="loggedIn">You are logged in!</p>
+<p *ngFor="let snack of snacks">{{snack}}</p>
+<p *ngIf="snacks.length < 3">You need more snacks.</p> -->
+<!-- <hr>
+<button (click)="onButtonClick()">Click me!</button>
+<button (click)="onButtonClickParam(5)">Click me!</button>
+<button (click)="onButtonClickParams(5, 'hello')">Click me!</button>
+<button (click)="onButtonClickEvent($event)">Click me!</button>
+<hr>
+<button (click)="onButtonClickParam(5)">Click me POST method!</button> -->
